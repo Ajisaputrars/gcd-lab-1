@@ -3,11 +3,14 @@ const express = require('express')
 
 const app = express()
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
     // res.send('Halo')
     // res.sendFile('index.html')
     res.sendFile(__dirname + '/index.html');
 })
+
 
 const PORT = process.env.PORT || 8000
 app.listen(PORT, () => {
